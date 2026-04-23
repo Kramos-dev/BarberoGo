@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BarberGo Costa Rica – Barbería a domicilio 24/7. Tu barbero llega como un Uber, rápido, preciso y donde estés. San José y todo Costa Rica.">
+<title>BarberGo CR – Barbería a Domicilio 24/7 Costa Rica</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#060608;
+  --dark:#0D0D10;
+  --dark2:#13131A;
+  --dark3:#1A1A24;
+  --dark4:#22222E;
+  --card:#181820;
+  --green:#00C853;
+  --green2:#00E676;
+  --green-dim:#003D18;
+  --silver:#C0C4CC;
+  --silver2:#8B909A;
+  --gold:#C8A96E;
+  --gold2:#E8C87A;
+  --white:#F4F5F7;
+  --glass:rgba(255,255,255,0.04);
+  --glass-border:rgba(255,255,255,0.08);
+  --glow-green:0 0 20px rgba(0,200,83,0.25);
+  --glow-gold:0 0 20px rgba(200,169,110,0.2);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--dark4);border-radius:2px}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(6,6,8,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:34px;height:34px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;box-shadow:var(--glow-green)}
+.nav-brand{font-size:17px;font-weight:800;letter-spacing:-0.3px}
+.nav-brand em{font-style:italic;color:var(--green)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-live{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--green);background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.2);border-radius:50px;padding:5px 12px}
+.nav-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse-dot 1.4s infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(0,200,83,0.6)}60%{box-shadow:0 0 0 5px rgba(0,200,83,0)}}
+.nav-btn{background:var(--green);color:var(--black);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;padding:8px 18px;border-radius:50px;text-decoration:none;letter-spacing:0.3px;transition:all .2s;border:none;cursor:pointer}
+.nav-btn:hover{background:var(--green2);transform:scale(1.04)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 52px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.city-layer{position:absolute;inset:0;background:
+  radial-gradient(ellipse 120% 60% at 50% 100%,rgba(0,200,83,0.06) 0%,transparent 60%),
+  radial-gradient(ellipse 80% 50% at 20% 80%,rgba(0,120,255,0.05) 0%,transparent 50%),
+  radial-gradient(ellipse 60% 40% at 80% 70%,rgba(200,169,110,0.04) 0%,transparent 50%),
+  linear-gradient(180deg,rgba(6,6,8,0.3) 0%,rgba(6,6,8,0.7) 50%,rgba(6,6,8,0.97) 100%),
+  #0a0c12}
+.city-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,83,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,83,0.03) 1px,transparent 1px);background-size:50px 50px}
+.city-lights{position:absolute;inset:0;overflow:hidden}
+.light{position:absolute;border-radius:50%;animation:light-float linear infinite}
+@keyframes light-float{0%{opacity:0;transform:translateY(0) scale(0)}20%{opacity:1}80%{opacity:0.4}100%{opacity:0;transform:translateY(-40vh) scale(0.5)}}
+
+.hero-content{position:relative;z-index:2;padding:0 22px;max-width:480px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,83,0.1);border:1px solid rgba(0,200,83,0.25);border-radius:50px;padding:6px 14px;font-size:11px;font-weight:700;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse-dot 1.4s infinite}
+.hero-title{font-size:clamp(28px,8vw,52px);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:8px}
+.hero-title .brand{color:var(--green);font-style:italic;display:block}
+.hero-headline{font-size:clamp(15px,4vw,22px);font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3;letter-spacing:-0.3px}
+.hero-sub{font-size:14px;font-weight:400;color:var(--silver2);margin-bottom:28px;line-height:1.7;max-width:340px}
+.hero-sub strong{color:var(--green);font-weight:600}
+
+.hero-ctas{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.btn-green{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:var(--black);font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;padding:17px 28px;border-radius:16px;border:none;cursor:pointer;text-decoration:none;letter-spacing:0.2px;transition:all .25s;position:relative;overflow:hidden}
+.btn-green::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transition:left .5s}
+.btn-green:hover::before{left:100%}
+.btn-green:hover{background:var(--green2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,200,83,0.4)}
+.btn-dark{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--glass);color:var(--white);font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;padding:17px 28px;border-radius:16px;border:1px solid var(--glass-border);cursor:pointer;text-decoration:none;letter-spacing:0.2px;transition:all .25s;backdrop-filter:blur(8px)}
+.btn-dark:hover{border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07);transform:translateY(-2px)}
+
+.hero-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.trust-pill{background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:10px 8px;text-align:center;backdrop-filter:blur(8px)}
+.trust-pill-icon{font-size:18px;display:block;margin-bottom:4px}
+.trust-pill-txt{font-size:10px;font-weight:600;color:var(--silver);line-height:1.3}
+.trust-pill-num{font-size:15px;font-weight:800;color:var(--green);display:block;margin-bottom:2px}
+
+/* ── ETA BAR ── */
+.eta-bar{background:rgba(0,200,83,0.07);border:1px solid rgba(0,200,83,0.18);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin:0 22px 32px}
+.eta-icon{width:40px;height:40px;border-radius:12px;background:rgba(0,200,83,0.15);border:1px solid rgba(0,200,83,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.eta-text{flex:1}
+.eta-label{font-size:10px;font-weight:600;color:var(--green);letter-spacing:1px;text-transform:uppercase}
+.eta-value{font-size:15px;font-weight:800;color:var(--white);margin-top:1px}
+.eta-value span{color:var(--green)}
+.eta-ping{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(0,200,83,0.6);animation:pulse-dot 1.4s infinite;flex-shrink:0}
+
+/* ── SECTIONS GENERIC ── */
+section{padding:60px 22px}
+.sec-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);display:block;margin-bottom:10px}
+.sec-title{font-size:clamp(22px,6vw,34px);font-weight:900;line-height:1.1;letter-spacing:-0.8px;margin-bottom:10px}
+.sec-title em{color:var(--green);font-style:italic}
+.sec-sub{font-size:14px;color:var(--silver2);line-height:1.7;margin-bottom:36px;max-width:380px}
+
+/* ── HOW IT WORKS – APP STYLE ── */
+.how-section{background:var(--dark2)}
+.app-card{background:var(--card);border:1px solid var(--glass-border);border-radius:24px;overflow:hidden;margin-bottom:16px}
+.app-card-header{padding:16px 18px 0;display:flex;align-items:center;gap:12px}
+.step-bubble{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;flex-shrink:0;font-style:italic}
+.step-bubble.s1{background:rgba(0,200,83,0.15);color:var(--green);border:1px solid rgba(0,200,83,0.3)}
+.step-bubble.s2{background:rgba(0,140,255,0.1);color:#4DA6FF;border:1px solid rgba(0,140,255,0.2)}
+.step-bubble.s3{background:rgba(200,169,110,0.1);color:var(--gold);border:1px solid rgba(200,169,110,0.2)}
+.step-bubble.s4{background:rgba(255,255,255,0.06);color:var(--white);border:1px solid rgba(255,255,255,0.1)}
+.step-title{font-size:14px;font-weight:700;color:var(--white)}
+.step-sub{font-size:12px;color:var(--silver2)}
+.app-card-body{padding:14px 18px 18px 18px}
+.step-desc{font-size:13px;color:var(--silver2);line-height:1.6}
+.step-eta-tag{display:inline-flex;align-items:center;gap:5px;margin-top:10px;background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.15);border-radius:50px;font-size:11px;font-weight:600;color:var(--green);padding:4px 10px}
+.step-eta-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green)}
+
+/* ── SERVICES ── */
+.services-section{background:var(--dark)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.svc-card{background:var(--card);border:1px solid var(--glass-border);border-radius:18px;padding:18px 14px;transition:all .25s;cursor:default;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);opacity:0;transition:opacity .25s}
+.svc-card:hover{border-color:rgba(0,200,83,0.25);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.svc-card:hover::before{opacity:1}
+.svc-card.wide{grid-column:span 2}
+.svc-card.vip{border-color:rgba(200,169,110,0.2);background:linear-gradient(135deg,var(--card),rgba(200,169,110,0.04))}
+.svc-card.vip::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.svc-card.vip:hover{border-color:rgba(200,169,110,0.4);box-shadow:0 8px 24px rgba(200,169,110,0.1)}
+.svc-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:1px;padding:3px 8px;border-radius:50px;margin-bottom:10px}
+.badge-vip{background:rgba(200,169,110,0.15);color:var(--gold);border:1px solid rgba(200,169,110,0.3)}
+.badge-fast{background:rgba(0,200,83,0.1);color:var(--green);border:1px solid rgba(0,200,83,0.25)}
+.badge-24{background:rgba(255,255,255,0.06);color:var(--silver);border:1px solid rgba(255,255,255,0.1)}
+.svc-icon{font-size:26px;display:block;margin-bottom:10px}
+.svc-name{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;line-height:1.3}
+.svc-desc{font-size:11px;color:var(--silver2);line-height:1.5;margin-bottom:10px}
+.svc-price{font-size:13px;font-weight:800;color:var(--green)}
+.svc-price.gold{color:var(--gold)}
+
+/* ── PHONE SECTION ── */
+.phone-section{background:var(--dark2);text-align:center;padding:52px 22px}
+.phone-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--silver2);margin-bottom:10px}
+.phone-number{font-size:clamp(38px,10vw,72px);font-weight:900;font-style:italic;color:var(--white);letter-spacing:-2px;line-height:1;margin-bottom:6px;text-shadow:0 0 40px rgba(0,200,83,0.2),0 0 80px rgba(0,200,83,0.08)}
+.phone-glow{height:2px;width:200px;background:linear-gradient(90deg,transparent,var(--green),transparent);margin:0 auto 24px;border-radius:1px}
+.phone-btns{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;padding:17px;border-radius:16px;text-decoration:none;transition:all .25s;letter-spacing:0.2px}
+.btn-wa:hover{background:#22C55E;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.4)}
+.btn-call{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--glass);color:var(--white);font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;padding:17px;border-radius:16px;text-decoration:none;border:1px solid var(--glass-border);transition:all .25s;backdrop-filter:blur(8px)}
+.btn-call:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+
+/* ── TRUST BADGES ROW ── */
+.trust-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:32px;max-width:360px;margin-left:auto;margin-right:auto}
+.trust-card{background:var(--card);border:1px solid var(--glass-border);border-radius:14px;padding:14px;display:flex;align-items:center;gap:10px}
+.trust-card-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.trust-card-icon.green{background:rgba(0,200,83,0.12);border:1px solid rgba(0,200,83,0.2)}
+.trust-card-icon.gold{background:rgba(200,169,110,0.1);border:1px solid rgba(200,169,110,0.2)}
+.trust-card-text{font-size:12px;font-weight:700;color:var(--white);line-height:1.3}
+.trust-card-text span{display:block;font-size:10px;font-weight:400;color:var(--silver2);margin-top:2px}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--dark)}
+.testi-grid{display:flex;flex-direction:column;gap:12px}
+.testi-card{background:var(--card);border:1px solid var(--glass-border);border-radius:18px;padding:18px;transition:border-color .2s}
+.testi-card:hover{border-color:rgba(0,200,83,0.2)}
+.testi-stars{color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:10px}
+.testi-text{font-size:13px;font-style:italic;color:rgba(244,245,247,0.85);line-height:1.65;margin-bottom:14px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+.testi-info-name{font-size:12px;font-weight:700;color:var(--white)}
+.testi-info-detail{font-size:10px;color:var(--silver2)}
+
+/* ── CTA FINAL ── */
+.cta-final{background:var(--dark2);text-align:center;padding:64px 22px}
+.cta-glow-ring{width:80px;height:80px;border-radius:50%;background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px;animation:ring-pulse 3s ease-in-out infinite}
+@keyframes ring-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,200,83,0.3)}50%{box-shadow:0 0 0 16px rgba(0,200,83,0)}}
+.cta-title{font-size:clamp(22px,6vw,36px);font-weight:900;line-height:1.15;margin-bottom:14px;letter-spacing:-0.8px}
+.cta-title em{color:var(--green);font-style:italic}
+.cta-sub{font-size:14px;color:var(--silver2);line-height:1.7;margin-bottom:32px}
+.btn-cta-main{display:block;background:var(--green);color:var(--black);font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;padding:20px;border-radius:18px;text-decoration:none;max-width:340px;margin:0 auto 12px;transition:all .25s;letter-spacing:0.2px;animation:cta-glow 3s ease-in-out infinite}
+@keyframes cta-glow{0%,100%{box-shadow:0 0 0 0 rgba(0,200,83,0.4)}50%{box-shadow:0 0 0 14px rgba(0,200,83,0)}}
+.btn-cta-main:hover{background:var(--green2);transform:translateY(-2px)}
+.cta-note{font-size:11px;color:var(--silver2);display:flex;align-items:center;justify-content:center;gap:6px}
+.cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* ── FLOATING BUTTONS ── */
+.float-bar{position:sticky;bottom:16px;width:100%;display:flex;justify-content:center;gap:10px;z-index:150;padding:0 22px;pointer-events:none;margin-top:-10px}
+.float-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;padding:13px 20px;border-radius:50px;text-decoration:none;pointer-events:all;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all .2s;animation:float-up 4s ease-in-out infinite}
+.float-call{display:inline-flex;align-items:center;gap:8px;background:rgba(13,13,16,0.95);color:var(--white);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;padding:13px 20px;border-radius:50px;text-decoration:none;pointer-events:all;border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(12px);transition:all .2s;animation:float-up 4s ease-in-out infinite .5s}
+@keyframes float-up{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.float-wa:hover{transform:scale(1.04) translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.55)}
+.float-call:hover{border-color:rgba(0,200,83,0.4);transform:scale(1.04) translateY(-2px)}
+.fi{font-size:16px;line-height:1;flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{background:var(--dark2);border-top:1px solid var(--glass-border);padding:36px 22px;text-align:center}
+.footer-logo{font-size:20px;font-weight:900;font-style:italic;margin-bottom:6px}
+.footer-logo em{color:var(--green)}
+.footer-tagline{font-size:12px;color:var(--silver2);margin-bottom:20px;line-height:1.5}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+.footer-links a{font-size:12px;color:var(--silver2);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--green)}
+.footer-seo{font-size:10px;color:rgba(255,255,255,0.18);line-height:1.6;max-width:340px;margin:0 auto 16px}
+.footer-copy{font-size:10px;color:rgba(255,255,255,0.2)}
+
+/* ── DIVIDERS ── */
+.div-green{height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,83,0.25),transparent)}
+.div-dark{height:1px;background:var(--glass-border)}
+
+/* ── GEO BAR ── */
+.geo-bar{background:rgba(0,200,83,0.06);border:1px solid rgba(0,200,83,0.15);border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.geo-icon{font-size:20px;flex-shrink:0}
+.geo-txt{font-size:12px;color:rgba(244,245,247,0.8);line-height:1.4}
+.geo-txt strong{color:var(--green)}
+
+/* ── STATS ROW ── */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 22px 0;padding:28px 0}
+.stat-box{text-align:center;padding:16px 10px;background:var(--card);border:1px solid var(--glass-border);border-radius:16px}
+.stat-n{font-size:24px;font-weight:900;font-style:italic;color:var(--green);line-height:1;display:block}
+.stat-l{font-size:10px;font-weight:500;color:var(--silver2);margin-top:4px;line-height:1.3}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">✂️</div>
+    <div class="nav-brand">Barber<em>Go</em> CR</div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-live">Disponible</span>
+    <a href="https://wa.me/50663026080" class="nav-btn">Reservar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="city-layer"></div>
+    <div class="city-grid"></div>
+    <div class="city-lights" id="lights"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Barberos en línea ahora
+    </div>
+
+    <h1 class="hero-title">
+      <span class="brand">BarberGo CR</span>
+      Barbería a Domicilio,<br>Rápida y Profesional
+    </h1>
+
+    <p class="hero-headline">Tu barbero llega como un Uber</p>
+    <p class="hero-sub">Rápido, preciso y donde estés. Hotel, hogar, oficina. <strong>24/7 en Costa Rica.</strong></p>
+
+    <div class="geo-bar">
+      <span class="geo-icon">📍</span>
+      <div class="geo-txt">Tu zona: <strong id="geo-city">San José, CR</strong> — Barbero en <strong id="geo-time">~15 min</strong></div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="https://wa.me/50663026080?text=Hola%2C%20quiero%20reservar%20un%20barbero%20ahora" class="btn-green">
+        <span style="font-size:18px">✂️</span>
+        Reservar Barbero Ahora
+      </a>
+      <a href="tel:63026080" class="btn-dark">
+        <span style="font-size:17px">📞</span>
+        Llamar Ahora · 6302-6080
+      </a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-pill">
+        <span class="trust-pill-num" id="cnt1">312</span>
+        <span class="trust-pill-txt">Cortes este mes</span>
+      </div>
+      <div class="trust-pill">
+        <span class="trust-pill-num">4.9★</span>
+        <span class="trust-pill-txt">Calificación</span>
+      </div>
+      <div class="trust-pill">
+        <span class="trust-pill-icon">⚡</span>
+        <span class="trust-pill-txt">24/7 siempre</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ETA BAR -->
+<div class="eta-bar">
+  <div class="eta-icon">🏎️</div>
+  <div class="eta-text">
+    <div class="eta-label">Tiempo estimado de llegada</div>
+    <div class="eta-value">Barbero disponible en <span id="eta-val">15</span> minutos</div>
+  </div>
+  <div class="eta-ping"></div>
+</div>
+
+<!-- STATS ROW -->
+<div class="stats-row">
+  <div class="stat-box">
+    <span class="stat-n">24/7</span>
+    <span class="stat-l">Siempre disponible</span>
+  </div>
+  <div class="stat-box">
+    <span class="stat-n" id="cnt-barbers">8</span>
+    <span class="stat-l">Barberos activos ahora</span>
+  </div>
+  <div class="stat-box">
+    <span class="stat-n">5★</span>
+    <span class="stat-l">Calidad garantizada</span>
+  </div>
+</div>
+
+<div class="div-green"></div>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <span class="sec-tag">¿Cómo funciona?</span>
+  <h2 class="sec-title">Simple como<br><em>pedir un Uber</em></h2>
+  <p class="sec-sub">En 4 pasos tienes tu corte profesional donde estés.</p>
+
+  <div class="app-card">
+    <div class="app-card-header">
+      <div class="step-bubble s1">1</div>
+      <div>
+        <div class="step-title">Solicita tu corte</div>
+        <div class="step-sub">WhatsApp o llamada</div>
+      </div>
+    </div>
+    <div class="app-card-body">
+      <p class="step-desc">Escríbenos por WhatsApp o llama al 6302-6080. Cuéntanos qué servicio necesitas y comparte tu ubicación exacta.</p>
+      <span class="step-eta-tag">30 segundos</span>
+    </div>
+  </div>
+
+  <div class="app-card">
+    <div class="app-card-header">
+      <div class="step-bubble s2">2</div>
+      <div>
+        <div class="step-title">Te asignamos el barbero</div>
+        <div class="step-sub">El más cercano a ti</div>
+      </div>
+    </div>
+    <div class="app-card-body">
+      <p class="step-desc">Localizamos al barbero certificado más cercano. Recibes confirmación con nombre, foto y tiempo estimado de llegada.</p>
+      <span class="step-eta-tag">Promedio 15–20 min</span>
+    </div>
+  </div>
+
+  <div class="app-card">
+    <div class="app-card-header">
+      <div class="step-bubble s3">3</div>
+      <div>
+        <div class="step-title">Llega a tu ubicación</div>
+        <div class="step-sub">Hotel · Casa · Oficina</div>
+      </div>
+    </div>
+    <div class="app-card-body">
+      <p class="step-desc">Tu barbero llega con todo el equipamiento profesional. Sin esperas, sin filas, sin salir de donde estés.</p>
+      <span class="step-eta-tag">Puntualidad garantizada</span>
+    </div>
+  </div>
+
+  <div class="app-card">
+    <div class="app-card-header">
+      <div class="step-bubble s4">4</div>
+      <div>
+        <div class="step-title">Disfruta tu estilo</div>
+        <div class="step-sub">Listo y perfecto</div>
+      </div>
+    </div>
+    <div class="app-card-body">
+      <p class="step-desc">Servicio profesional, acabado de barbería premium. Paga al final, califica tu experiencia y agenda tu próxima visita.</p>
+      <span class="step-eta-tag">Garantía de satisfacción</span>
+    </div>
+  </div>
+</section>
+
+<div class="div-green"></div>
+
+<!-- SERVICES -->
+<section class="services-section" id="servicios">
+  <span class="sec-tag">Servicios</span>
+  <h2 class="sec-title">Barbería premium,<br><em>donde estés</em></h2>
+  <p class="sec-sub">Corte, barba, fade y más. Todo con barberos certificados a domicilio en Costa Rica.</p>
+
+  <div class="services-grid">
+    <div class="svc-card wide vip">
+      <span class="svc-badge badge-vip">VIP PREMIUM</span>
+      <span class="svc-icon">👑</span>
+      <div class="svc-name">Grooming VIP Completo</div>
+      <div class="svc-desc">Corte personalizado + diseño de barba + perfilado + toalla caliente + productos premium. La experiencia completa de barbería de lujo en tu ubicación.</div>
+      <div class="svc-price gold">Desde ₡25,000</div>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-badge badge-fast">EXPRESS</span>
+      <span class="svc-icon">✂️</span>
+      <div class="svc-name">Fade Profesional</div>
+      <div class="svc-desc">Low, mid o high fade. Acabado perfecto.</div>
+      <div class="svc-price">Desde ₡12,000</div>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-badge badge-fast">POPULAR</span>
+      <span class="svc-icon">💈</span>
+      <div class="svc-name">Corte Clásico</div>
+      <div class="svc-desc">Taper, clásico o moderno según tu estilo.</div>
+      <div class="svc-price">Desde ₡10,000</div>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">🪒</span>
+      <div class="svc-name">Barba & Diseño</div>
+      <div class="svc-desc">Perfilado, arreglo y diseño profesional.</div>
+      <div class="svc-price">Desde ₡8,000</div>
+    </div>
+
+    <div class="svc-card">
+      <span class="svc-icon">🎨</span>
+      <div class="svc-name">Líneas & Arte</div>
+      <div class="svc-desc">Diseños y personalización capilar.</div>
+      <div class="svc-price">Desde ₡6,000</div>
+    </div>
+
+    <div class="svc-card wide">
+      <span class="svc-badge badge-24">24/7</span>
+      <span class="svc-icon">🏨</span>
+      <div class="svc-name">Servicio Express a Domicilio · Hotel / Oficina / Casa</div>
+      <div class="svc-desc">Atención urgente donde estés. Barbero certificado en minutos. Ideal para eventos, viajes de negocios, entrevistas o cualquier emergencia de estilo.</div>
+      <div class="svc-price">Desde ₡15,000</div>
+    </div>
+  </div>
+</section>
+
+<div class="div-green"></div>
+
+<!-- PHONE SECTION -->
+<section class="phone-section">
+  <div class="phone-label">Contáctanos ahora mismo</div>
+  <div class="phone-number">6302-6080</div>
+  <div class="phone-glow"></div>
+
+  <div class="trust-row">
+    <div class="trust-card">
+      <div class="trust-card-icon green">⚡</div>
+      <div class="trust-card-text">Servicio 24/7<span>Siempre disponible</span></div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card-icon green">🏎️</div>
+      <div class="trust-card-text">En minutos<span>Promedio 15 min</span></div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card-icon gold">🏅</div>
+      <div class="trust-card-text">Certificados<span>100% verificados</span></div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card-icon gold">📍</div>
+      <div class="trust-card-text">A domicilio<span>Hotel · Casa · Oficina</span></div>
+    </div>
+  </div>
+
+  <div style="height:28px"></div>
+  <div class="phone-btns">
+    <a href="https://wa.me/50663026080?text=Quiero%20reservar%20un%20barbero%20ahora" class="btn-wa">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp · Respuesta inmediata
+    </a>
+    <a href="tel:63026080" class="btn-call">
+      <span style="font-size:18px">📞</span>
+      Llamar al 6302-6080
+    </a>
+  </div>
+</section>
+
+<div class="div-dark"></div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <span class="sec-tag">Testimonios</span>
+  <h2 class="sec-title">Lo que dicen<br><em>nuestros clientes</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Llegaron en 12 minutos a mi hotel en San José. El fade quedó perfecto antes de mi reunión de negocios. Exactamente como un Uber, pero para barbería."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--green);color:var(--black)">CR</div>
+        <div>
+          <div class="testi-info-name">Carlos R.</div>
+          <div class="testi-info-detail">Hotel Marriott · Fade Express</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"A las 2 AM antes de mi vuelo. Increíble. Barbero profesional, puntual y el corte quedó de primera. Servicio que no existe en otro lugar de CR."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#1877F2;color:white">DV</div>
+        <div>
+          <div class="testi-info-name">Diego V.</div>
+          <div class="testi-info-detail">Alajuela · Servicio nocturno 2AM</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Servicio VIP completo en mi casa. Corte + barba + toalla caliente. Una experiencia premium que recomiendo a todos mis colegas de trabajo."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--gold);color:var(--black)">MA</div>
+        <div>
+          <div class="testi-info-name">Manuel A.</div>
+          <div class="testi-info-detail">Escazú · Grooming VIP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-green"></div>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-glow-ring">✂️</div>
+  <span class="sec-tag">¿Listo para reservar?</span>
+  <h2 class="cta-title">No importa la hora.<br>No importa el lugar.<br><em>Tu barbero está en camino.</em></h2>
+  <p class="cta-sub">Barbero 24/7 Costa Rica. El único servicio de barbería a domicilio urgente del país. Barberos certificados, puntualidad garantizada.</p>
+  <a href="https://wa.me/50663026080?text=Necesito%20un%20barbero%20ahora" class="btn-cta-main">
+    ✂️ &nbsp;Reservar Barbero Ahora
+  </a>
+  <div class="cta-note">Atención inmediata · Barbero en camino · 6302-6080</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Barber<em>Go</em> CR</div>
+  <div class="footer-tagline">Barbería a Domicilio 24/7 · Servicio Premium en Costa Rica<br>Barbero urgente San José, Escazú, Heredia, Alajuela y todo el país</div>
+  <div class="footer-links">
+    <a href="#servicios">Servicios</a>
+    <a href="tel:63026080">Llamar</a>
+    <a href="https://wa.me/50663026080">WhatsApp</a>
+    <a href="#">Zonas</a>
+  </div>
+  <div class="footer-seo">Barbero 24/7 Costa Rica · Barbería a domicilio · Corte urgente hombre · Fade a domicilio San José · Grooming masculino Costa Rica · Barbería profesional a domicilio</div>
+  <div class="footer-copy">© 2026 BarberGo Costa Rica · Todos los derechos reservados</div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-bar">
+  <a href="https://wa.me/50663026080?text=Quiero%20reservar%20ahora" class="float-wa">
+    <svg class="fi" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+  <a href="tel:63026080" class="float-call">
+    <span class="fi">📞</span>
+    6302-6080
+  </a>
+</div>
+
+<script>
+// City geo rotation
+const cities=[['San José','15'],['Escazú','12'],['Heredia','18'],['Alajuela','20'],['Curridabat','10'],['Tibás','14'],['Desamparados','16']];
+let ci=0;
+setInterval(()=>{
+  ci=(ci+1)%cities.length;
+  const gc=document.getElementById('geo-city');
+  const gt=document.getElementById('geo-time');
+  const ev=document.getElementById('eta-val');
+  if(gc)gc.textContent=cities[ci][0]+', CR';
+  if(gt)gt.textContent='~'+cities[ci][1]+' min';
+  if(ev)ev.textContent=cities[ci][1];
+},4500);
+
+// Animated counter
+function animCount(id,target){
+  const el=document.getElementById(id);
+  if(!el)return;
+  let v=Math.floor(target*.75);
+  const go=()=>{v=Math.min(v+Math.ceil((target-v)/6),target);el.textContent=v;if(v<target)requestAnimationFrame(go)};
+  requestAnimationFrame(go);
+}
+setTimeout(()=>animCount('cnt1',312),600);
+
+// Barbers counter fluctuate
+let bcount=8;
+setInterval(()=>{
+  const d=Math.random()>.6?(Math.random()>.5?1:-1):0;
+  bcount=Math.max(4,Math.min(12,bcount+d));
+  const el=document.getElementById('cnt-barbers');
+  if(el)el.textContent=bcount;
+},5000);
+
+// City lights particles
+const lc=document.getElementById('lights');
+if(lc){
+  const colors=['#00C853','#4DA6FF','#C8A96E','#FFFFFF','#00E676'];
+  function mklight(){
+    const d=document.createElement('div');
+    d.className='light';
+    const sz=Math.random()*3+1;
+    const col=colors[Math.floor(Math.random()*colors.length)];
+    d.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;bottom:${Math.random()*30}%;background:${col};box-shadow:0 0 ${sz*4}px ${col};animation-duration:${Math.random()*12+6}s;animation-delay:${Math.random()*8}s;opacity:0`;
+    lc.appendChild(d);
+    setTimeout(()=>d.remove(),20000);
+  }
+  for(let i=0;i<20;i++)setTimeout(mklight,i*400);
+  setInterval(mklight,700);
+}
+
+// Scroll reveal
+if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}
+    });
+  },{threshold:0.08});
+  document.querySelectorAll('.app-card,.svc-card,.testi-card,.stat-box,.trust-card').forEach(el=>{
+    el.style.opacity='0';el.style.transform='translateY(18px)';
+    el.style.transition='opacity .5s ease,transform .5s ease';
+    obs.observe(el);
+  });
+}
+</script>
+</body>
+</html>
